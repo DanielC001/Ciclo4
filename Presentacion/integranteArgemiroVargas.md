@@ -1,0 +1,4 @@
+# Presentacion del Integrante Argemiro Vargas
+Cordial Saludo ,
+Es ingeniero electrónico de la Universidad Distrital, con especialización en Automatización de Procesos Industriales y Magíster en Tecnología Educativa, laborando en la docencia orientado asignaturas como Física y Matemáticas de 33 años apasionada por aprender y usar nuevas herramientas virtuales para afrontar la cuarta revolución industrial. Durante éste primer Sprint asumió el rol de Product Owner, se encuentra retomando y aprendiendo los conceptos esenciales de programación del stack MERN, junto al buen grupo Web Fear. Su hobbies favoritos son ajedrez, tennis de mesa y sqash.
+=======
