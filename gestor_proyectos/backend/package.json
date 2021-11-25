@@ -1,7 +1,7 @@
 {
-  "name": "gestor_proyectos",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Backen con Express, graphQL y MongoDB equipo WebFear",
+  "description": "Backend con Express, graphQL y MongoDB equipo WebFear",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,10 +9,13 @@
   "author": "Equipo WebFear",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
     "graphql": "^16.0.1",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
