@@ -6,24 +6,50 @@ const inscripcionType=gql`
         idProyecto:[Proyecto]
         idEstudiante:[Usuario]
         aceptadoIsActive:Boolean
-        fechaIngreso:Date
-        fechaEgreso:Date
+        fechaIngreso:String
+        fechaEgreso:String
+    }
+    type Proyecto{
+        _id: ID!
+        nombre: String!     
+        lider: ID           
+        objetivoGeneral:String     
+        objetivoEspecifico:[String]   
+        presupuesto:String     
+        fechaInicio:String 
+        fechaTerminacion:String
+        estadoIsActive:Boolean
+        fase:fase1     
+    }
+    type Usuario {
+        _id: ID!   
+        nombre:String     
+        apellido: String
+        correo: String!
+        identificacion: String
+        contrasena: String!
+        rol:[Rol]     
+        idProyecto:[Proyecto]
+        estado:state!   
     }
     type Query{
-        getInscripciones:[Inscripciones]
+        getInscripciones:[Inscripcion]
         getInscripcionById(_id:String):Inscripcion
     }
+    
     type Mutation{
-        createInscripcion{
-            idProyecto:[Proyecto]
-            idEstudiante:[Usuario]
+        createInscripcion(
+            idProyecto:ID
+            idEstudiante:ID
             aceptadoIsActive:Boolean
-        }:Inscripcion
-        updateInscripcion{
+        ):Inscripcion
+
+        updateInscripcion(
             _id:ID!
             aceptadoIsActive:Boolean
-            fechaEgreso:Date
-        }
+            fechaEgreso:String
+        ):Inscripcion
+
         deleteInscripcion(_id: ID!):Inscripcion
     }
 `

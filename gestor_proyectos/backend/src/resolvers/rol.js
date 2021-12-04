@@ -1,9 +1,8 @@
 const rolService = require('../services/rol')
 
-
 const rolResolvers ={
     Query:{
-        getRols: async(parent,args) =>{
+        getRols: async(parent,args)=>{
             // lógica del proceso
             let rols  = await rolService.getRols()
             return rols
@@ -28,9 +27,6 @@ const rolResolvers ={
         }
  
 }
- 
-    
-     
 }
 
 module.exports = {

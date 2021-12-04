@@ -1,16 +1,9 @@
 const { gql } = require("apollo-server-express")
 const avance = require("../models/avance")
 
- 
-   
- 
-
-
-
 const advanceType = gql`
-
   
- 
+    
     type Avance{ 
         _id: ID!   
         fechaAvance: String
@@ -18,9 +11,6 @@ const advanceType = gql`
         observaciones: String           
         idProyecto:[Proyecto]   
         
-        
-
-
     }
     type Proyecto{
         _id: ID!
@@ -32,22 +22,18 @@ const advanceType = gql`
         fechaInicio:String 
         fechaTerminacion:String
         estadoIsActive:Boolean
-        fase:stateProject!       
+        fase:fase1     
     }
-
  
-
     type Query {
         getAdvances: [Avance]
         getAdvanceById(_id:String): Avance
     }
     type Mutation {
         createAdvance(
-            _id: ID!   
             fechaAvance: String
             descripcion:String     
             observaciones: String    
-
             
         ): Avance
         updateAdvance(
@@ -57,7 +43,6 @@ const advanceType = gql`
             observaciones: String  
       
         ): Avance
-
         deleteAdvance(_id: ID!): Avance
     }
 `;

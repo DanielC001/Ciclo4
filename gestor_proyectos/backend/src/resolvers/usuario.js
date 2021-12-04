@@ -1,6 +1,5 @@
 const userService = require('../services/usuario')
 
-
 const userResolvers ={
     Query:{
         getUsers: async(parent,args) =>{
@@ -32,7 +31,6 @@ const userResolvers ={
     
      
 }
-
-module.exports = {
+module.exports={
     userResolvers
 }

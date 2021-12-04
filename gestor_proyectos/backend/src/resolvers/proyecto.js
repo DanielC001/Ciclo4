@@ -26,5 +26,4 @@ const projectResolvers = {
         }
     }
 }
-
-module.exports = { projectResolvers }
+module.exports = {projectResolvers}

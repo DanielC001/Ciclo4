@@ -1,6 +1,5 @@
 const Proyecto = require('../models/proyecto')
 const userService = require("./usuario")
-const advanceService =require('./avance')
 
 createProject = async (project) => {
     let projectInstance = new Proyecto(project)

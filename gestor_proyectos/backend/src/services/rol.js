@@ -1,4 +1,5 @@
-const Rol= require('../models/rol')
+const Rol = require('../models/rol')
+
 
 createRol = async (rol) => {
     let rolInstance = new Rol(rol)

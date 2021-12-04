@@ -1,19 +1,20 @@
 const Inscripcion = require('../models/inscripcion')
+const userService = require('./usuario')
 
 createInscripcion = async (inscripcion) => {
     let inscripcionInstance = new Inscripcion(inscripcion)
     created_inscripcion = await inscripcionInstance.save()
-    //await userService.UpdateProject(project[''], created_project['_id'])
+    await userService.updateInscripcion(inscripcion['idEstudiante'], created_inscripcion['_id'])
     return created_inscripcion
 }
 
 getInscripciones = async () => {
-    let projects = await Proyecto.find({})
+    let projects = await Inscripcion.find({}).populate("idProyecto").populate("idEstudiante")
     return projects
 }
 
 getInscripcionById = async (inscripcionId) => {
-    let inscripcion = await Inscripcion.findById(inscripcionId).exec()
+    let inscripcion = await Inscripcion.findById(inscripcionId).populate("idProyecto").populate("idEstudiante")
     return inscripcion
 }
 
@@ -26,6 +27,7 @@ deleteInscripcion = async (inscripcionId) => {
     let inscripcion = await Inscripcion.findByIdAndDelete(inscripcionId)
     return inscripcion
 }
+
 
 module.exports = {
     createInscripcion,

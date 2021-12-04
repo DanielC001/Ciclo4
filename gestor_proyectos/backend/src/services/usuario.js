@@ -1,4 +1,5 @@
 const Usuario = require('../models/usuario')
+const Proyecto = require('../models/proyecto')
 
 createUser = async (user) => {
     let userInstance = new Usuario(user)

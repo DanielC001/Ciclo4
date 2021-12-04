@@ -2,26 +2,11 @@ const { gql } = require("apollo-server-express")
 
 const projectType = gql`
 
-enum stateProject {
-    Iniciado
-    Endesarrollo
-    Terminado
-}
-
-type Proyecto {
-        _id: ID!
-        nombre: String!  
-        objetivoGeneral:String     
-        objetivoEspecifico:[String]   
-        presupuesto:String 
-        fechaInicio:String    
-        fechaTerminacion:String
-        lider: ID!       
-        estadoIsActive:Boolean
-        fase:stateProject!
-     }
- 
-
+    enum fase1{
+        Iniciado
+        EnDesarrollo
+        Terminado
+    }
     type Usuario {
         _id: ID!   
         nombre:String     
@@ -31,9 +16,20 @@ type Proyecto {
         contrasena: String!
         rol:[Rol]     
         idProyecto:[Proyecto]   
-        estado:state!
     }
+    type Proyecto {
+        _id: ID!
+        nombre: String!     
+        lider: ID           
+        objetivoGeneral:String     
+        objetivoEspecifico:[String]   
+        presupuesto:String     
+        fechaTerminacion:String
+        estadoIsActive:Boolean
+        fase:fase1      
 
+
+    }
     type Query{
         getProjects:[Proyecto]
         getProjectById(_id:String):Proyecto
@@ -42,27 +38,26 @@ type Proyecto {
     type Mutation{
         createProject(
             nombre: String!     
-            lider: ID         
+            lider: ID           
             objetivoGeneral:String     
             objetivoEspecifico:[String]   
-            presupuesto:String  
-            fechaInicio:String                                                                     
-            fechaTerminacion:String
-            estadoIsActive:Boolean
-            fase:stateProject! 
-        ): Proyecto
-
-        updateProject(
-            nombre: String!         
-            objetivoGeneral:String     
-            objetivoEspecifico:[String]  
-            fechaInicio:String 
             presupuesto:String     
             fechaTerminacion:String
             estadoIsActive:Boolean
-            fase:stateProject!
-      
+            fase:fase1  
+        ): Proyecto
+
+        updateProject(
+            nombre: String!     
+            lider: ID           
+            objetivoGeneral:String     
+            objetivoEspecifico:[String]   
+            presupuesto:String     
+            fechaTerminacion:String
+            estadoIsActive:Boolean
+            fase:fase1   
         ):Proyecto
+
         deleteProject(_id: ID!):Proyecto
 
     }
