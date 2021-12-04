@@ -1,6 +1,16 @@
 const { gql } = require("apollo-server-express")
 
+
+
+
+
 const userType = gql`
+
+ enum state{
+   Pendiente
+   Autorizado
+   NoAutorizado
+    }
  
     type Usuario {
         _id: ID!   
@@ -11,6 +21,8 @@ const userType = gql`
         contrasena: String!
         rol:[Rol]     
         idProyecto:[Proyecto]   
+        estado:state!
+        
 
 
     }
@@ -20,10 +32,11 @@ const userType = gql`
         lider: ID           
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
-        presupuesto:String     
+        presupuesto:String    
+        fechaInicio:String  
         fechaTerminacion:String
         estadoIsActive:Boolean
-        fase:String           
+        fase:stateProject!       
     }
 
     type Rol{
@@ -44,7 +57,9 @@ const userType = gql`
             apellido: String
             correo: String!
             identificacion: String
-            contrasena: String!            
+            contrasena: String! 
+            estadoIsActive:Boolean
+                     
         ): Usuario
         updateUser(
             _id: ID!   
@@ -53,6 +68,7 @@ const userType = gql`
             correo: String!
             identificacion: String
             contrasena: String!
+            estadoIsActive:Boolean
         ): Usuario
 
         deleteUser(_id: ID!): Usuario

@@ -31,10 +31,11 @@ const UsuarioSchema = new Schema({
     rol:{
         type:Schema.Types.ObjectId,
         ref:"Rol"
-    },
+    }, 
+
     estado:{ 
         type:String,       
-        enum:["Pendiente","Autorizado","No autorizado"],
+        enum:["Pendiente","Autorizado","NoAutorizado"],
         default:"Pendiente"
     },
 

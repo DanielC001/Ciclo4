@@ -1,6 +1,28 @@
 const { gql } = require("apollo-server-express")
 
 const projectType = gql`
+
+enum stateProject {
+    Iniciado
+    En_desarrollo
+    Terminado
+     }
+
+     type Proyecto {
+        _id: ID!
+        nombre: String!  
+        objetivoGeneral:String     
+        objetivoEspecifico:[String]   
+        presupuesto:String 
+        fechaInicio:String    
+        fechaTerminacion:String
+        lider: ID       
+        estadoIsActive:Boolean
+        fase:stateProject!
+        
+     }
+ 
+
     type Usuario {
         _id: ID!   
         nombre:String     
@@ -10,20 +32,15 @@ const projectType = gql`
         contrasena: String!
         rol:[Rol]     
         idProyecto:[Proyecto]   
+        estado:state!
     }
-    type Proyecto {
-        _id: ID!
-        nombre: String!     
-        lider: ID           
-        objetivoGeneral:String     
-        objetivoEspecifico:[String]   
-        presupuesto:String     
-        fechaTerminacion:String
-        estadoIsActive:Boolean
-        fase:String         
 
 
-    }
+    
+        
+
+
+    
     type Query{
         getProjects:[Proyecto]
         getProjectById(_id:String):Proyecto
@@ -35,21 +52,24 @@ const projectType = gql`
         lider: ID           
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
-        presupuesto:String     
+        presupuesto:String  
+        fechaInicio:String                                                                     
         fechaTerminacion:String
         estadoIsActive:Boolean
-        fase:String    
+        
         ): Proyecto
 
         updateProject(
             nombre: String!     
         lider: ID           
         objetivoGeneral:String     
-        objetivoEspecifico:[String]   
+        objetivoEspecifico:[String]  
+        fechaInicio:String 
         presupuesto:String     
         fechaTerminacion:String
         estadoIsActive:Boolean
-        fase:String    
+        fase:stateProject!
+      
         ):Proyecto
 
         deleteProject(_id: ID!):Proyecto
