@@ -3,7 +3,9 @@ const mongoose = require('mongoose')
 const {ApolloServer} = require("apollo-server-express")
 const {resolvers} = require('./resolvers')
 const {types} = require('./types')
-
+const dotenv = require('dotenv');
+dotenv.config();
+const {BD_URI}=process.env;
 
 const app = express()
 const server = new ApolloServer({
@@ -13,7 +15,7 @@ const server = new ApolloServer({
 
 
 
-mongoose.connect("mongodb+srv://webfear:webfear@cluster0.mpeaq.mongodb.net/gestion_proyectos", async()=>{
+mongoose.connect(BD_URI, async()=>{
     console.log("conexión a bd exitosa");
     app.listen(5010, async()=>{
         await server.start()
