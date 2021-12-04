@@ -1,9 +1,5 @@
 const { gql } = require("apollo-server-express")
 
-
-
-
-
 const rolType = gql`
 
     type Rol{
@@ -20,8 +16,8 @@ const rolType = gql`
     type Mutation {
         createRol(
             _id: ID!
-        nombreRol: String
-        descripcion: String      
+            nombreRol: String
+            descripcion: String      
         ): Rol
 
         updateRol(_id: ID!, nombreRol: String, descripcion: String): Rol

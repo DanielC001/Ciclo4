@@ -4,11 +4,11 @@ const projectType = gql`
 
 enum stateProject {
     Iniciado
-    En_desarrollo
+    Endesarrollo
     Terminado
-     }
+}
 
-     type Proyecto {
+type Proyecto {
         _id: ID!
         nombre: String!  
         objetivoGeneral:String     
@@ -16,10 +16,9 @@ enum stateProject {
         presupuesto:String 
         fechaInicio:String    
         fechaTerminacion:String
-        lider: ID       
+        lider: ID!       
         estadoIsActive:Boolean
         fase:stateProject!
-        
      }
  
 
@@ -35,12 +34,6 @@ enum stateProject {
         estado:state!
     }
 
-
-    
-        
-
-
-    
     type Query{
         getProjects:[Proyecto]
         getProjectById(_id:String):Proyecto
@@ -49,29 +42,27 @@ enum stateProject {
     type Mutation{
         createProject(
             nombre: String!     
-        lider: ID           
-        objetivoGeneral:String     
-        objetivoEspecifico:[String]   
-        presupuesto:String  
-        fechaInicio:String                                                                     
-        fechaTerminacion:String
-        estadoIsActive:Boolean
-        
+            lider: ID         
+            objetivoGeneral:String     
+            objetivoEspecifico:[String]   
+            presupuesto:String  
+            fechaInicio:String                                                                     
+            fechaTerminacion:String
+            estadoIsActive:Boolean
+            fase:stateProject! 
         ): Proyecto
 
         updateProject(
-            nombre: String!     
-        lider: ID           
-        objetivoGeneral:String     
-        objetivoEspecifico:[String]  
-        fechaInicio:String 
-        presupuesto:String     
-        fechaTerminacion:String
-        estadoIsActive:Boolean
-        fase:stateProject!
+            nombre: String!         
+            objetivoGeneral:String     
+            objetivoEspecifico:[String]  
+            fechaInicio:String 
+            presupuesto:String     
+            fechaTerminacion:String
+            estadoIsActive:Boolean
+            fase:stateProject!
       
         ):Proyecto
-
         deleteProject(_id: ID!):Proyecto
 
     }

@@ -6,11 +6,17 @@ const { gql } = require("apollo-server-express")
 
 const userType = gql`
 
- enum state{
-   Pendiente
-   Autorizado
-   NoAutorizado
+    enum state{
+        Pendiente
+        Autorizado
+        NoAutorizado
     }
+    enum stateProject{
+        Iniciado
+        EnDesarrollo
+        Terminado
+    }
+
  
     type Usuario {
         _id: ID!   
@@ -23,8 +29,6 @@ const userType = gql`
         idProyecto:[Proyecto]   
         estado:state!
         
-
-
     }
     type Proyecto{
         _id: ID!
@@ -32,10 +36,9 @@ const userType = gql`
         lider: ID           
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
-        presupuesto:String    
-        fechaInicio:String  
+        presupuesto:String  
+        fechaInicio:String
         fechaTerminacion:String
-        estadoIsActive:Boolean
         fase:stateProject!       
     }
 
@@ -43,7 +46,6 @@ const userType = gql`
         _id: ID!
         nombreRol: String
         descripcion: String
-        user: [Usuario]
     }
 
     type Query {
@@ -51,14 +53,12 @@ const userType = gql`
         getUserById(_id:String): Usuario
     }
     type Mutation {
-        createUser(
-            _id: ID!   
+        createUser( 
             nombre:String     
             apellido: String
             correo: String!
             identificacion: String
             contrasena: String! 
-            estadoIsActive:Boolean
                      
         ): Usuario
         updateUser(
@@ -68,7 +68,7 @@ const userType = gql`
             correo: String!
             identificacion: String
             contrasena: String!
-            estadoIsActive:Boolean
+            
         ): Usuario
 
         deleteUser(_id: ID!): Usuario

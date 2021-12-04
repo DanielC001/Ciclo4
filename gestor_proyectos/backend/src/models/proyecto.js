@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const User = require('./usuario')
+const Usuario = require('./usuario')
 
 
 const ProyectoSchema = new  Schema({
@@ -33,8 +33,8 @@ const ProyectoSchema = new  Schema({
     fase:{ 
         type:String,
         required:true,
-        enum:["Iniciado,En_desarrollo,Terminado"],
-        default:"Iniciado"
+        enum:["Iniciado","Endesarrollo","Terminado"],
+        //default:"Iniciado"
     }
 })
 
