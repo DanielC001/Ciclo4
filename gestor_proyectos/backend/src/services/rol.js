@@ -26,9 +26,6 @@ deleteRol = async (rolId) => {
     let rol = await Rol.findByIdAndDelete(rolId)
     return rol
 }
-
- 
-
 module.exports = {
     createRol,
     getRols,

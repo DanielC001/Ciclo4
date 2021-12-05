@@ -13,8 +13,6 @@ const server = new ApolloServer({
     resolvers:resolvers
 })
 
-
-
 mongoose.connect(BD_URI, async()=>{
     console.log("conexión a bd exitosa");
     app.listen(5010, async()=>{

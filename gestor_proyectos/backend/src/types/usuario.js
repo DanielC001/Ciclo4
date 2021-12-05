@@ -53,7 +53,8 @@ const userType = gql`
             correo: String!
             identificacion: String
             contrasena: String! 
-            estado:String!            
+            estado:String!      
+                  
         ): Usuario
         updateUser(
             _id: ID!   
