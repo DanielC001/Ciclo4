@@ -42,7 +42,5 @@ module.exports = {
     getUserById,
     updateUser,
     UpdateProject,
-    deleteUser
-    
-
+    deleteUser    
 }
