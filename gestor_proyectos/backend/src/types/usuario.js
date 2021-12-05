@@ -14,14 +14,14 @@ const userType = gql`
 
     type Usuario {
         _id: ID!   
-        nombre:String     
-        apellido: String
+        nombre:String!     
+        apellido: String!
         correo: String!
-        identificacion: String
+        identificacion: String!
         contrasena: String!
-        rol:[Rol]     
+        rol:Rol!
         idProyecto:[Proyecto]
-        estado:state!   
+        estado:state        
     }
 
     type Proyecto{
@@ -48,12 +48,15 @@ const userType = gql`
     }
     type Mutation {
         createUser(  
-            nombre:String     
-            apellido: String
+            nombre:String!     
+            apellido: String!
             correo: String!
-            identificacion: String
+            identificacion: String!
             contrasena: String! 
-            estado:String!      
+            estado:state=Pendiente 
+            rol:ID!
+           
+               
                   
         ): Usuario
         updateUser(
@@ -63,6 +66,7 @@ const userType = gql`
             correo: String!
             identificacion: String
             contrasena: String!
+            estado:state 
         ): Usuario
 
         deleteUser(_id: ID!): Usuario

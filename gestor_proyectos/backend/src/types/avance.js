@@ -9,7 +9,7 @@ const advanceType = gql`
         fechaAvance: String
         descripcion:String     
         observaciones: String           
-        idProyecto:[Proyecto]   
+        idProyecto:Proyecto
         
     }
     type Proyecto{
@@ -33,7 +33,9 @@ const advanceType = gql`
         createAdvance(
             fechaAvance: String
             descripcion:String     
-            observaciones: String    
+            observaciones: String 
+            idProyecto:ID 
+
             
         ): Avance
         updateAdvance(

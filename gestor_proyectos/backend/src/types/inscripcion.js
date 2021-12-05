@@ -28,7 +28,7 @@ const inscripcionType=gql`
         correo: String!
         identificacion: String
         contrasena: String!
-        rol:[Rol]     
+        rol:Rol     
         idProyecto:[Proyecto]
         estado:state!   
     }

@@ -14,7 +14,7 @@ const projectType = gql`
         correo: String!
         identificacion: String
         contrasena: String!
-        rol:[Rol]     
+        rol:Rol   
         idProyecto:[Proyecto]   
     }
     type Proyecto {

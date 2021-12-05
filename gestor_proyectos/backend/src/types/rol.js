@@ -12,7 +12,7 @@ const rolType = gql`
     }
     type Mutation {
         createRol(
-            nombreRol: String
+            nombreRol: String!
             descripcion: String      
         ):Rol
         updateRol(_id: ID!, nombreRol: String, descripcion: String): Rol
@@ -22,3 +22,6 @@ const rolType = gql`
 `;
 
 module.exports = {rolType}
+
+
+ 
