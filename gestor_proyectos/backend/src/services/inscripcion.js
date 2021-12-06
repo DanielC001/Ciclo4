@@ -4,7 +4,7 @@ const userService = require('./usuario')
 createInscripcion = async (inscripcion) => {
     let inscripcionInstance = new Inscripcion(inscripcion)
     created_inscripcion = await inscripcionInstance.save()
-    await userService.updateInscripcion(inscripcion['idEstudiante'], created_inscripcion['_id'])
+    //await userService.updateInscripcion(inscripcion['idEstudiante'], created_inscripcion['_id'])
     return created_inscripcion
 }
 

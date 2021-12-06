@@ -3,8 +3,8 @@ const { gql } = require("apollo-server-express")
 const inscripcionType=gql`
     type Inscripcion{
         _id:ID!
-        idProyecto:[Proyecto]
-        idEstudiante:[Usuario]
+        idProyecto:Proyecto
+        idEstudiante:Usuario
         aceptadoIsActive:Boolean
         fechaIngreso:String
         fechaEgreso:String
@@ -41,7 +41,6 @@ const inscripcionType=gql`
         createInscripcion(
             idProyecto:ID
             idEstudiante:ID
-            aceptadoIsActive:Boolean
         ):Inscripcion
 
         updateInscripcion(

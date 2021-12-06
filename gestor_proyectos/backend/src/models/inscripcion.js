@@ -6,14 +6,17 @@ const Proyecto= require('./proyecto')
 const InscripcionSchema = new Schema({
     idProyecto:{
         type:Schema.Types.ObjectId,
-        ref:"Proyecto"
+        ref:"Proyecto",
+        required:true
     },
     idEstudiante:{
         type:Schema.Types.ObjectId,
-        ref:"Usuario"
+        ref:"Usuario",
+        required:true
     },
     aceptadoIsActive:{
-        type:Boolean
+        type:Boolean,
+        default:null
     },
     fechaIngreso:{
         type:Date
