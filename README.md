@@ -1,3 +1,7 @@
+
+# En el documnto entregado del sprint 3 se encuentra la configuración del archivo .env 
+
+
 # 🚀 Aplicación Web - Ciclo 4 - MisiónTIC 2022
 
 Repositorio de trabajo del Equipo WebFear
@@ -10,4 +14,3 @@ Repositorio de trabajo del Equipo WebFear
 * ✅ Argemiro Vargas.
 * ✅Felix Julian Gutierrez Bernal.
  
-#En el documnto entregado del sprint 3 se encuentra la configuración del archivo .env 
