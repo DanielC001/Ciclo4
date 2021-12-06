@@ -10,3 +10,4 @@ Repositorio de trabajo del Equipo WebFear
 * ✅ Argemiro Vargas.
 * ✅Felix Julian Gutierrez Bernal.
  
+#En el documnto entregado del sprint 3 se encuentra la configuración del archivo .env 
