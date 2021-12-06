@@ -1,5 +1,5 @@
 
-# En el documnto entregado del sprint 3 se encuentra la configuración del archivo .env 
+# En el documento entregado del sprint 3 se encuentra la configuración del archivo .env 
 
 
 # 🚀 Aplicación Web - Ciclo 4 - MisiónTIC 2022
