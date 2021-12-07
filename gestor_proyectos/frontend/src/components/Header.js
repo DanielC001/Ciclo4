@@ -1,14 +1,14 @@
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
-import {  Nav,  Navbar,  NavbarBrand,  NavbarText,  NavItem,  NavLink,img} from "reactstrap";
+import {  Nav,  Navbar,  NavbarBrand,  NavbarText,  NavItem,  NavLink } from "reactstrap";
 import {Link} from 'react-router-dom'
 const Header = () => {
   return (
     <div>
       <Navbar color="primary"  expand="md">
-      <a class="navbar-brand" style={{color:"#ffff"}}    href="#">
+      <div class="navbar-brand" style={{color:"#ffff"}}    >
    <h1>WF</h1>
-  </a>
+  </div>
         <NavbarBrand style={{color:"#ffff"}}  href="">Gestión de Proyectos</NavbarBrand>
         <Nav className="mr-auto" navbar>
 

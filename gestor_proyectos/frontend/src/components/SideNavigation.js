@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaFileAlt, FaGem, FaHeart, FaPencilAlt, FaProjectDiagram, FaSlidersH, FaUser, FaUserShield } from "react-icons/fa";
+import { FaFileAlt, FaGem, FaPencilAlt,  FaSlidersH, FaUser, FaUserShield } from "react-icons/fa";
 import {
   Menu,
   MenuItem,
