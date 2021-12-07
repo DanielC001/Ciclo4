@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import {  Nav,  Navbar,  NavbarBrand,  NavbarText,  NavItem,  NavLink,img} from "reactstrap";
-
+import {Link} from 'react-router-dom'
 const Header = () => {
   return (
     <div>
@@ -9,18 +9,26 @@ const Header = () => {
       <a class="navbar-brand" style={{color:"#ffff"}}    href="#">
    <h1>WF</h1>
   </a>
-        <NavbarBrand style={{color:"#ffff"}}  href="/">Gestión de Proyectos</NavbarBrand>
+        <NavbarBrand style={{color:"#ffff"}}  href="">Gestión de Proyectos</NavbarBrand>
         <Nav className="mr-auto" navbar>
 
           <NavItem>
             <NavLink style={{color:"#ffff"}}  href="/components/">Components</NavLink>
           </NavItem>
 
+
           <NavItem>
             <NavLink  style={{color:"#ffff"}}    href="https://github.com/Anderzon00/WebFear">
               GitHub
             </NavLink>
           </NavItem>
+          
+          <Link to='/login'>
+            <NavItem>
+              <NavLink style={{color:"#ffff"}} >iniciar sesión</NavLink>
+            </NavItem>
+          </Link>
+          
 
         </Nav>
 

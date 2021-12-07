@@ -1,30 +1,41 @@
-import Header from "./components/Header";
-import SideNavigation from "./components/SideNavigation";
-import { Col, Row } from "reactstrap";
+import './App.css'
+import Home from './pages/home';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LayoutPublico from "./layout/publicLayout";
+import LayoutPrivado from "./layout/privateLayout";
+import Login from './pages/login';
+import Pagina1 from './pages/pagina1';
+
 function App() {
-  const styles = {
-    contentDiv: {
-      display: "flex",
-    },
-    contentMargin: {
-      marginLeft: "10px",
-      width: "100%",
-    },
-  };
-  return (
-    <>
-      <Row>
-        <Col>
-         <Header/>
-        </Col>
-      </Row>
-      <div style={styles.contentDiv}>
-        <SideNavigation/>
-        <div style={styles.contentMargin}>
-          <h1 style={{ padding: "20%" }}>This is Content Area</h1>
+    return (
+        <div className="App">
+            <Router>
+                <Switch>
+                    <Route path={['/inicio']}>
+                        <LayoutPrivado>
+                            <Switch>
+                                <Route path="/inicio">
+                                    <Pagina1></Pagina1>
+                                </Route>
+                            </Switch>
+                        </LayoutPrivado>
+                    </Route>
+                    <Route path={['/login', '/']}>
+                        <LayoutPublico>
+                            <Switch>
+                                <Route path="/login">
+                                    <Login></Login>
+                                </Route>
+                                <Route path='/'>
+                                    <Home></Home>
+                                </Route>
+                            </Switch>
+                        </LayoutPublico>
+                    </Route>
+                </Switch>
+            </Router>
         </div>
-      </div>
-    </>
-  );
+    );
 }
+
 export default App;
