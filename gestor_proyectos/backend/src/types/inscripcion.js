@@ -12,7 +12,7 @@ const inscripcionType=gql`
     type Proyecto{
         _id: ID!
         nombre: String!     
-        lider: ID           
+        lider: Usuario!          
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
         presupuesto:String     
