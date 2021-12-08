@@ -14,8 +14,8 @@ const advanceType = gql`
     }
     type Proyecto{
         _id: ID!
-        nombre: String!     
-        lider: ID           
+        nombre: String!
+        lider: Usuario!    
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
         presupuesto:String     
