@@ -48,6 +48,7 @@ const projectType = gql`
         ): Proyecto
 
         updateProject(
+            _id: ID!
             nombre: String!     
             lider: ID           
             objetivoGeneral:String     
