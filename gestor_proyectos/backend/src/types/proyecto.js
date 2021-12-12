@@ -41,7 +41,8 @@ const projectType = gql`
             lider: ID           
             objetivoGeneral:String     
             objetivoEspecifico:[String]   
-            presupuesto:String     
+            presupuesto:String   
+            fechaInicio:String 
             fechaTerminacion:String
             estadoIsActive:Boolean
             fase:fase1  
@@ -53,7 +54,8 @@ const projectType = gql`
             lider: ID           
             objetivoGeneral:String     
             objetivoEspecifico:[String]   
-            presupuesto:String     
+            presupuesto:String    
+            fechaInicio:String 
             fechaTerminacion:String
             estadoIsActive:Boolean
             fase:fase1   
