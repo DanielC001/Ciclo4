@@ -10,6 +10,7 @@ const rolType = gql`
         getRols:[Rol]
         getRolById(_id:String):Rol
     }
+    
     type Mutation {
         createRol(
             nombreRol: String!
