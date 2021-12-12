@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineUser } from "react-icons/ai";
+ 
 import {BsFillPersonFill} from "react-icons/bs"
 import {  Nav,  Navbar,  NavbarBrand,  NavbarText,  NavItem,  NavLink } from "reactstrap";
 import {Link} from 'react-router-dom'
