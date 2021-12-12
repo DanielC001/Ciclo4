@@ -24,6 +24,7 @@ const projectType = gql`
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
         presupuesto:String     
+        fechaInicio:String 
         fechaTerminacion:String
         estadoIsActive:Boolean
         fase:fase1      
