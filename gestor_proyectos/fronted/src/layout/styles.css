@@ -1,0 +1,17 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* modificar el scroll*/
+    overflow-y: hidden;
+}
+
+.mainContainer>main {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.mainContainer>footer {
+    padding: 10px;
+    background-color: brown;
+}
