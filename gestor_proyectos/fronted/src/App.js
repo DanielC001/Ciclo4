@@ -5,6 +5,7 @@ import LayoutPublico from "./layout/publicLayout";
 import LayoutPrivado from "./layout/privateLayout";
 import Login from './pages/login';
 import Pagina1 from './pages/pagina1';
+import Registro from './pages/registro';
 
 function App() {
     return (
@@ -20,11 +21,14 @@ function App() {
                             </Switch>
                         </LayoutPrivado>
                     </Route>
-                    <Route path={['/login', '/']}>
+                    <Route path={['/login','registro', '/']}>
                         <LayoutPublico>
                             <Switch>
                                 <Route path="/login">
                                     <Login></Login>
+                                </Route>
+                                <Route path="/registro">
+                                    <Registro></Registro>
                                 </Route>
                                 <Route path='/'>
                                     <Home></Home>
