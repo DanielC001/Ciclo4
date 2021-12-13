@@ -5,7 +5,7 @@ const client = new ApolloClient({
     uri: 'http://localhost:5010/graphql',
     cache: new InMemoryCache()
 });
-
+ 
 const GET_ROL = gql`
 {
     getRols { 
