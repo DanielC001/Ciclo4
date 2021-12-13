@@ -8,7 +8,7 @@ const client = new ApolloClient({
 
 const GET_ROL = gql`
 {
-    getRols {
+    getRols { 
         _id
         nombreRol
         descripcion
