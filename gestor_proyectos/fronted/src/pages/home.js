@@ -1,7 +1,13 @@
 
 import '../layout/styles.css'
-import GetRol from './roles/GetRol';
-import GetProject from './proyectos/GetProject'
+
+import Index from './roles/Index';
+import  GetProject from './proyectos/GetProject';                      
+ 
+ 
+
+
+
  
 
 import '../styles/styles.css'
@@ -11,19 +17,14 @@ import '../styles/styles.css'
 
 function Home(){
     return(
-        <div>
-
-            <h1>Titulo</h1>
-
-      
- 
-
-            <GetRol/>
-            <GetProject/>
-            
-            
+        <div>             
 
             <h1>Inicio</h1>
+            <Index/>
+            <GetProject/>
+            
+        
+
 
         </div>
     )

@@ -17,6 +17,14 @@ const projectType = gql`
         rol:Rol   
         idProyecto:[Proyecto]   
     }
+
+    type Rol{
+        _id: ID!
+        nombreRol: String
+        descripcion: String
+    }
+
+
     type Proyecto {
         _id: ID!
         nombre: String!     
@@ -27,7 +35,9 @@ const projectType = gql`
         fechaInicio:String 
         fechaTerminacion:String
         estadoIsActive:Boolean
-        fase:fase1      
+        fase:fase1     
+        
+        
 
 
     }

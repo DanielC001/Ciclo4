@@ -12,10 +12,7 @@ const Header = () => {
         <NavbarBrand style={{color:"#ffff"}}  href="">Gestión de Proyectos</NavbarBrand>
         <Nav className="mr-auto" navbar>
 
-          <NavItem>
-            <NavLink style={{color:"#ffff"}}  href="/components/">Components</NavLink>
-          </NavItem>
-
+        
 
           <NavItem>
             <NavLink  style={{color:"#ffff"}}    href="https://github.com/Anderzon00/WebFear">
@@ -30,7 +27,7 @@ const Header = () => {
         <Link to='/login'>
           <NavbarText>
             <div>
-              <button type="button" class="btn btn-success">Iniciar Sesión</button>   
+              <button type="button" className="btn btn-success">Iniciar Sesión</button>   
             </div>
           </NavbarText>
         </Link>

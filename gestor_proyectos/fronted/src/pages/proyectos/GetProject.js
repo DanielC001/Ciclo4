@@ -13,7 +13,7 @@ const client = new ApolloClient({
   {
     getProjects{
       _id  
-      lider{ _id }  
+      lider{_id}
       nombre 
       objetivoGeneral 
       objetivoEspecifico
@@ -24,6 +24,11 @@ const client = new ApolloClient({
     fechaInicio   
      
      }
+
+      
+
+
+
         } 
   `;
 
@@ -33,6 +38,10 @@ const client = new ApolloClient({
     if (error) return <p>Error :(</p>;
  
    
+ const {getProjects,fechaTerminacion} = data;
+ 
+ console.log(getProjects);
+ 
 
     return data.getProjects.map(({ _id, nombre, lider , objetivoGeneral,objetivoEspecifico,presupuesto,estadoIsActive,fechaTerminacion,fase,fechaInicio}) => (
       <div key={_id}>
