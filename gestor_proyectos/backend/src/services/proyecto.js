@@ -9,12 +9,12 @@ createProject = async (project) => {
 }
 
 getProjects = async () => {
-    let projects = await Proyecto.find({})
+    let projects = await Proyecto.find({}).populate("lider")
     return projects
 }
 
 getProjectById = async (projectId) => {
-    let project = await Proyecto.findById(projectId).exec()
+    let project = await Proyecto.findById(projectId).exec().populate("lider")
     return project
 }
 

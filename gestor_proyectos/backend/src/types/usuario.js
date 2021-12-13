@@ -30,7 +30,8 @@ const userType = gql`
         lider: Usuario!           
         objetivoGeneral:String     
         objetivoEspecifico:[String]   
-        presupuesto:String     
+        presupuesto:String    
+        fechaInicio:String  
         fechaTerminacion:String
         estadoIsActive:Boolean
         fase:fase1!         

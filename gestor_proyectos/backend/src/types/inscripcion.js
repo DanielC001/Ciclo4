@@ -32,6 +32,14 @@ const inscripcionType=gql`
         idProyecto:[Proyecto]
         estado:state!   
     }
+
+    type Rol{
+        _id: ID!
+        nombreRol: String
+        descripcion: String
+    }
+
+
     type Query{
         getInscripciones:[Inscripcion]
         getInscripcionById(_id:String):Inscripcion
