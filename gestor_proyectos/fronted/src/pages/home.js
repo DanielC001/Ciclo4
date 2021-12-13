@@ -1,5 +1,5 @@
 
-import '../layout/styles.css'
+import '../styles/styles.css'
 import GetRol from './roles/GetRol';
 import GetProject from './proyectos/GetProject'
  

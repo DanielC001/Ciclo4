@@ -22,7 +22,12 @@ function Login() {
                 </Link>
             </form>
             
-
+                <Link to="/lider">
+                <button class="btn btn-primary">Lider</button>
+                </Link>
+                <Link to="/admin/proyectos">
+                <button class="btn btn-primary">Administrador</button>
+                </Link>
         </div>
     )
 }

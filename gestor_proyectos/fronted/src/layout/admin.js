@@ -1,7 +1,6 @@
 import '../styles/styles.css'
 import React from "react";
-import Header from "../components/HeaderPrivate";
-import Footer from "../components/Footer";
+import Header from "../components/admin/HeaderAdmin";
 import { Col, Row } from "reactstrap";
 //import SideNavigation from "../components/SideNavigation";
 

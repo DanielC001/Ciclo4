@@ -33,3 +33,26 @@
     justify-content: center;
     margin-left: 375px;
 }
+
+
+/**/
+
+.cardStyle {
+    width: 18rem;
+}
+
+.card-body>p {
+    font-size: large;
+}
+
+
+/**/
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 20px;
+    padding-top: 20px;
+}
