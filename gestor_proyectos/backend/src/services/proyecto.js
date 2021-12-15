@@ -14,7 +14,7 @@ getProjects = async () => {
 }
 
 getProjectById = async (projectId) => {
-    let project = await Proyecto.findById(projectId).exec().populate("lider")
+    let project = await Proyecto.findById(projectId).populate("lider")
     return project
 }
 
