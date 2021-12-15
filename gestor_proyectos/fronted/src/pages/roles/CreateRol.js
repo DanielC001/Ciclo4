@@ -2,6 +2,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, useMutation, gql } from "@
 import { FormGroup,Label,Input,Form,Button} from "reactstrap";
 import { useState } from "react";
 import { BrowserRouter } from 'react-router-dom';
+import Index from "./Index";
  
 const client = new ApolloClient({
     uri: 'http://localhost:5010/graphql',
@@ -47,7 +48,7 @@ const CreateRolForm = () => {
     return (
         
         <ApolloProvider client={client}>   
-        <Form inline onSubmit={handleSubmit}>
+        <Form  onSubmit={handleSubmit}>
 
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
         <Label for="nombreRol" className="mr-sm-2">Nombre</Label>

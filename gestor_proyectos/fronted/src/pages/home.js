@@ -3,7 +3,8 @@
  
 
 import Index from './roles/Index';
-import  GetProject from './proyectos/GetProject';                      
+import  GetProject from './proyectos/GetProject';       
+import Inscripcion from './inscripciones/Inscripcion';               
  
  
 
@@ -22,6 +23,7 @@ function Home(){
             <h1>Inicio</h1>
             <Index/>
             <GetProject/>
+            <Inscripcion/>
             
         
 

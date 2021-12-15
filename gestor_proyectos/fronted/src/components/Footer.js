@@ -7,8 +7,16 @@ const Footer = () => {
     return (
         <footer>
 
-            <Image src="https://i.imgur.com/QQQQQQQ.png" className="footer-logo" />  
-    
+          
+<footer class="bg-light text-center text-lg-start">
+ 
+  <div class="text-center p-3" style={{backgroundColor:"black" ,color:'White' }}>
+    © 2021 WebFear
+     
+  </div>
+   
+</footer>
+
         
 
         </footer>
