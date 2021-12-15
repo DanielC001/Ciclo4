@@ -56,3 +56,20 @@
     margin-right: 20px;
     padding-top: 20px;
 }
+
+.tabla {
+    width: 100vh;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-left: 40vh;
+}
+
+.titulo {
+    background-color: rgb(209, 209, 202);
+    width: 107vh;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border-style: groove;
+}

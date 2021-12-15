@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from "@apollo/client";
 import { Card , Col, Form, Table } from "reactstrap";
- 
+
 
 
 const client = new ApolloClient({

@@ -14,6 +14,7 @@ import ActualizarUsuario from './pages/actualizarUsuarios'
 
 import ProyectoAdmin from './pages/admin/proyectos'
 import ProyectoRegistros from './pages/admin/registros'
+import Actualizar from './pages/admin/actualizar'
 
 function App() {
     return (
@@ -29,17 +30,19 @@ function App() {
                             </Switch>
                         </LayoutPrivado>
                     </Route>
-                    <Route path={['/admin/proyectos','/admin/registros','/admin/actualizar']}>
+                    <Route path={['/admin/actualizar/:idUsuario','/admin/proyectos','/admin/registros','/admin/actualizar']}>
                         <LayoutAdmin>
                             <Switch>
-                                <Route path="/admin/proyectos">
+                                <Route exact path="/admin/proyectos">
                                     <ProyectoAdmin></ProyectoAdmin>
                                 </Route>
-                                <Route path="/admin/registros">
+                                <Route exact path="/admin/registros">
                                     <ProyectoRegistros></ProyectoRegistros>
                                 </Route>
-                                <Route path="/admin/actualizar">
+                                <Route exact path="/admin/actualizar">
                                     <ActualizarUsuario/>
+                                </Route>    
+                                <Route exact path="/admin/actualizar/:idUsuario" component={Actualizar}>
                                 </Route>
                             </Switch>
                         </LayoutAdmin>
