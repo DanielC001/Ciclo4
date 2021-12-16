@@ -55,11 +55,8 @@ const userType = gql`
             identificacion: String!
             contrasena: String! 
             estado:state=Pendiente 
-            rol:ID!
-           
-               
-                  
-        ): Usuario
+            rol:ID!  
+        ):Usuario
         updateUser(
             _id: ID!   
             nombre:String     

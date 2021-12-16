@@ -29,13 +29,13 @@ function GET_USERS() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     return (
-        <div class = "tabla">
-            <div class="titulo">
+        <div className = "tabla">
+            <div className="titulo">
             <h1>Usuarios Registrados</h1>
             </div>
             
-            <table class="table table-striped table-hover">
-                <thead class="table-dark">
+            <table className="table table-striped table-hover">
+                <thead className="table-dark">
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
