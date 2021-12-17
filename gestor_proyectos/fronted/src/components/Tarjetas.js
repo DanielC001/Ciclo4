@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/Form.css'
 import { Link } from 'react-router-dom'
 import imagen from './imagenProyecto.jpg'
-function Tarjeta ({nombre,general,especifico,presupuesto}) {
+function Tarjeta ({nombre,general,especifico,presupuesto,url}) {
     return (
         <div>
             <div class="card cardStyle" >
@@ -12,7 +12,9 @@ function Tarjeta ({nombre,general,especifico,presupuesto}) {
                 <h6>{general}</h6>
                 <p>{especifico}</p>
                 <p>{presupuesto}</p>
-                <a href="#" class ="btn btn-primary">Ver</a>
+                <Link to={url}>
+                    <button className="btn btn-info">Actualizar</button>
+                </Link>
                 </div>
             </div>
         </div>

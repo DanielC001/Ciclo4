@@ -52,9 +52,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-right: 20px;
-    padding-top: 20px;
+    justify-content: flex-start;
+    margin: 20px;
 }
 
 .tabla {
@@ -72,4 +71,8 @@
     margin-bottom: 10px;
     border-radius: 3px;
     border-style: groove;
+}
+
+.botonTabla {
+    margin-right: 5px;
 }

@@ -1,3 +1,4 @@
+import '../../styles/Form.css'
 import {ApolloClient, InMemoryCache, ApolloProvider, useQuery,gql  } from "@apollo/client";
 import { queries } from "@testing-library/react";
 import { get } from "jquery";
@@ -33,7 +34,7 @@ const client = new ApolloClient({
         } 
   `;
 
-  function GET_PROJECTS(){
+  function GET_PROJECTS({enlace}){
     const { loading, error, data } = useQuery(GET_PROJECT);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
@@ -47,18 +48,17 @@ const client = new ApolloClient({
     return data.getProjects.map(({ _id, nombre, lider , objetivoGeneral,objetivoEspecifico,presupuesto,estadoIsActive,fechaTerminacion,fase,fechaInicio}) => (
       <div key={_id}>
 
-        <Tarjetas nombre={nombre} general={objetivoGeneral} especifico={objetivoEspecifico} presupuesto={presupuesto}></Tarjetas>
+        <Tarjetas nombre={nombre} general={objetivoGeneral} especifico={objetivoEspecifico} presupuesto={presupuesto} url={`${enlace}${_id}`}></Tarjetas>
       </div>
     ));      
   }
 
-  const GetProject = () => {
+  const GetProject = ({link}) => {
     return (
       <ApolloProvider client={client}>
-        <div>
-          <h1>GetProject</h1>
-          <GET_PROJECTS/>
-        </div>
+          <div className='contenido'>
+          <GET_PROJECTS enlace={link}></GET_PROJECTS>
+          </div>
       </ApolloProvider>
     );
   }

@@ -18,7 +18,7 @@ import Registro from'./pages/publico/registro';
 import ProyectoAdmin from'./pages/admin/proyectos';
 import ProyectoRegistros from './pages/admin/registros'
 import Actualizar from './pages/admin/actualizar'
-
+import ProyectoId from './pages/admin/proyectoId'
 //lider
 import Inicio from './pages/estudiante/inicio'
 //estudiante
@@ -30,19 +30,21 @@ function App() {
         <div className="App">
             <Router>
                 <Switch>
-                    <Route path={['/admin/actualizar/:idUsuario','/admin/proyectos','/admin/registros','/admin/actualizar']}>
+                    <Route path={['/admin/actualizar/:idUsuario','/admin/proyectos','/admin/proyectos/:idProyecto','/admin/registros','/admin/actualizar']}>
                         <LayoutAdmin>
                             <Switch>
-                                <Route exact path="/admin/proyectos">
-                                    <ProyectoAdmin></ProyectoAdmin>
-                                </Route>
                                 <Route exact path="/admin/registros">
                                     <ProyectoRegistros></ProyectoRegistros>
                                 </Route>
+                                <Route exact path="/admin/actualizar/:idUsuario" component={Actualizar}>
+                                </Route> 
                                 <Route exact path="/admin/actualizar">
                                     <ActualizarUsuarios/>
-                                </Route>    
-                                <Route exact path="/admin/actualizar/:idUsuario" component={Actualizar}>
+                                </Route> 
+                                <Route exact path="/admin/proyectos/:idProyecto" component={ProyectoId}>
+                                </Route>
+                                <Route exact path="/admin/proyectos">
+                                    <ProyectoAdmin></ProyectoAdmin>
                                 </Route>
                             </Switch>
                         </LayoutAdmin>
