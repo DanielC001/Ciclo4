@@ -22,7 +22,7 @@ function Login() {
                 </Link>
             </form>
             
-                <Link to="/lider">
+                <Link to="/lider/proyectos">
                 <button class="btn btn-primary">Lider</button>
                 </Link>
                 <Link to="/admin/proyectos">

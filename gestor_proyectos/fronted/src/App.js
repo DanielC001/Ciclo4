@@ -59,13 +59,11 @@ function App() {
                             </Switch>
                         </LayoutLider>
                     </Route>
-                    <Route path={['/estudiante/proyectos','/estudiante/proyectos/:idProyecto']}>
+                    <Route path={['/estudiante/proyectos']}>
                         <LayoutEstudiante>
                             <Switch>
-                                <Route exact path="/estudiante/proyectos">
+                                <Route path="/estudiante/proyectos">
                                     <Inicio/>
-                                </Route>
-                                <Route exact path="/estudiante/proyectos/:idProyecto" component={ProyectoEId}>
                                 </Route>
                             </Switch>
                         </LayoutEstudiante>
