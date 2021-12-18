@@ -11,7 +11,7 @@ const propi={nombre:"hola",general:"hola2"};
 //import { Table } from "reactstrap";
 
 
-  const GetProject = () => {
+const GetProject = () => {
     return (
         <div>
           <h1>GetProject</h1>

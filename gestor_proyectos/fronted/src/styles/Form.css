@@ -76,3 +76,15 @@
 .botonTabla {
     margin-right: 5px;
 }
+
+.distribucion {
+    display: flex
+}
+
+.tabla2 {
+    width: 100vh;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-left: 10vh;
+}

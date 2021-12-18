@@ -17,7 +17,7 @@ function Login() {
                 <div class="texto">
                     <label class ="form-check-label" for="exampleCheck1">¿No tienes cuenta aún? <Link to="/registro">Registrate</Link></label>
                 </div>
-                <Link to="/estudiante">
+                <Link to="/estudiante/proyectos">
                 <button class="btn btn-primary">Entrar</button>
                 </Link>
             </form>

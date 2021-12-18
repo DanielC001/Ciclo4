@@ -19,9 +19,10 @@ import ProyectoAdmin from'./pages/admin/proyectos';
 import ProyectoRegistros from './pages/admin/registros'
 import Actualizar from './pages/admin/actualizar'
 import ProyectoId from './pages/admin/proyectoId'
-//lider
-import Inicio from './pages/estudiante/inicio'
 //estudiante
+import Inicio from './pages/estudiante/proyectos'
+import ProyectoEId from './pages/estudiante/proyectosId'
+//Lider
 import PaginaLider from './pages/lider/inicio'
 
 
@@ -58,11 +59,13 @@ function App() {
                             </Switch>
                         </LayoutLider>
                     </Route>
-                    <Route path={['/estudiante/proyectos']}>
+                    <Route path={['/estudiante/proyectos','/estudiante/proyectos/:idProyecto']}>
                         <LayoutEstudiante>
                             <Switch>
-                                <Route path="/estudiante/proyectos">
+                                <Route exact path="/estudiante/proyectos">
                                     <Inicio/>
+                                </Route>
+                                <Route exact path="/estudiante/proyectos/:idProyecto" component={ProyectoEId}>
                                 </Route>
                             </Switch>
                         </LayoutEstudiante>
