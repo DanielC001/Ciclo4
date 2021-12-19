@@ -27,7 +27,7 @@ function GET_ROLS() {
             
                 
                     <Table>
-                        <thead>
+                        <thead className="table-dark">
                             <tr>
                                 <th>Nombre</th>
                                 <th>Descripción</th>

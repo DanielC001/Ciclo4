@@ -13,17 +13,13 @@ const Header = () => {
         <Nav className="mr-auto" navbar>
 
           <NavItem>
-            <NavLink style={{color:"#ffff"}}  href="/components/">Registro usuarios</NavLink>
+            <NavLink style={{color:"#ffff"}}  href="/components/">Estudiantes</NavLink>
           </NavItem>
-
 
           <NavItem>
-            <NavLink  style={{color:"#ffff"}}    href="https://github.com/Anderzon00/WebFear">
-              GitHub
-            </NavLink>
+            <NavLink style={{color:"#ffff"}}  href="/lider/proyectos">Mis proyectos</NavLink>
           </NavItem>
-          
-      
+
 
         </Nav>
 

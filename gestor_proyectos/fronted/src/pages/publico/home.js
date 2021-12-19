@@ -1,4 +1,4 @@
-import Index from '../roles/Index';
+import Index from '../admin/roles/Index';
 import  GetProject from '../proyectos/GetProject';       
 import Inscripcion from '../inscripciones/Inscripcion';               
 import '../../styles/styles.css'

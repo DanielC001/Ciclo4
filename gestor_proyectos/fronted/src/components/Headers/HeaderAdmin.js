@@ -9,15 +9,18 @@ const Header = () => {
       <div className="navbar-brand" style={{color:"#ffff"}}    >
    <h1>WF</h1>
   </div>
-        <NavbarBrand style={{color:"#ffff"}}  href="/admin/proyectos">Gestión de Proyectos</NavbarBrand>
         <Nav className="mr-auto" navbar>
 
           <NavItem>
-            <NavLink style={{color:"#ffff"}}  href="/admin/registros">Registros</NavLink>
+            <NavLink style={{color:"#ffff"}}  href="/admin/registros">Usuarios</NavLink>
           </NavItem>
 
           <NavItem>
             <NavLink style={{color:"#ffff"}}  href="/admin/proyectos">Proyectos</NavLink>
+          </NavItem>
+
+          <NavItem>
+            <NavLink style={{color:"#ffff"}}  href="/admin/roles">Roles</NavLink>
           </NavItem>
 
         </Nav>

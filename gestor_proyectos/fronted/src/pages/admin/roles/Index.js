@@ -8,12 +8,12 @@ function index() {
         <div>
   
   <Table     bordered={true}>
-                <thead>
+                <thead >
                     <tr>
                         <th>CREAR</th>
                         <th>GESTIONAR</th>
                     </tr>
-                </thead>
+                </thead >
                 <tbody>
                     <tr>
                         <td><CreateRol/></td>

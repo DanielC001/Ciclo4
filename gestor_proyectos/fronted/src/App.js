@@ -19,6 +19,7 @@ import ProyectoAdmin from'./pages/admin/proyectos';
 import ProyectoRegistros from './pages/admin/registros'
 import Actualizar from './pages/admin/actualizar'
 import ProyectoId from './pages/admin/proyectoId'
+import Roles from './pages/admin/roles'
 //estudiante
 import Inicio from './pages/estudiante/proyectos'
 import ProyectoEId from './pages/estudiante/proyectosId'
@@ -31,7 +32,7 @@ function App() {
         <div className="App">
             <Router>
                 <Switch>
-                    <Route path={['/admin/actualizar/:idUsuario','/admin/proyectos','/admin/proyectos/:idProyecto','/admin/registros','/admin/actualizar']}>
+                    <Route path={['/admin/actualizar/:idUsuario','/admin/proyectos','/admin/proyectos/:idProyecto','/admin/registros','/admin/actualizar','/admin/roles']}>
                         <LayoutAdmin>
                             <Switch>
                                 <Route exact path="/admin/registros">
@@ -46,6 +47,9 @@ function App() {
                                 </Route>
                                 <Route exact path="/admin/proyectos">
                                     <ProyectoAdmin></ProyectoAdmin>
+                                </Route>
+                                <Route exact path="/admin/roles">
+                                    <Roles/>
                                 </Route>
                             </Switch>
                         </LayoutAdmin>
