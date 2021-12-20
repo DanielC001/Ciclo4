@@ -11,7 +11,7 @@ const app = express()
 const server = new ApolloServer({
     typeDefs:types,
     resolvers:resolvers
-})
+});
 
 mongoose.connect(BD_URI, async()=>{
     console.log("conexión a bd exitosa");
