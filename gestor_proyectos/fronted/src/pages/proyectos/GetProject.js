@@ -24,13 +24,7 @@ import Tarjetas from "../../components/Tarjetas"
     fechaTerminacion
     fase
     fechaInicio   
-     
      }
-
-      
-
-
-
         } 
   `;
 

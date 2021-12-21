@@ -38,7 +38,7 @@ const Login = () => {
             setSuccess(`User ${data} creado con éxito`);
             setCorreo("");
             setContrasena("");
-            history.push('/admin/proyectos')
+            history.push('/admin/proyectos');
         }).catch((error) => {
             setError(error.message.replace("GraphQL error: ", ""));
         });

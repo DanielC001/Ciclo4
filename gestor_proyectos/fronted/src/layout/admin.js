@@ -1,10 +1,10 @@
 import '../styles/styles.css'
 import React from "react";
 import Header from "../components/Headers/HeaderAdmin";
-import {useEffect} from 'react';
-import {useAuth} from '../components/authContext'
-import {useMutation,gql} from '@apollo/client'
-import {useHistory} from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useAuth } from '../components/authContext'
+import { useMutation, gql } from '@apollo/client'
+import { useHistory } from 'react-router-dom'
 import { Col, Row } from "reactstrap";
 //import SideNavigation from "../components/SideNavigation";
 
@@ -26,37 +26,40 @@ const Layout = ({ children }) => {
         }
       }
     `;
-    const {authToken,setToken} = useAuth();
-    const history=useHistory();
-    const [validarToken,{data:dataMutation,loading:loadingMutation,error:errorMutation}]= useMutation(VALIDATE_TOKEN);
-    
-    useEffect(()=>{
-        validarToken()
-    },[validarToken]);  
+    const history = useHistory();
+    const { authToken, setToken } = useAuth();
+    const [loadingAuth, setLoadingAuth] = useState(true);
+    const [validarToken, { data: dataMutation, loading: loadingMutation, error: errorMutation }] = useMutation(VALIDATE_TOKEN);
 
-    useEffect(()=>{
-        console.log('DM',dataMutation);
-        if(dataMutation){
-            if(dataMutation.validarToken.token){
+    useEffect(() => {
+        validarToken();
+    }, [validarToken]);
+
+    useEffect(() => {
+        if (dataMutation) {
+            if (dataMutation.validarToken.token) {
                 setToken(dataMutation.validarToken.token);
             }else{
                 setToken(null);
-            }
-    }},[dataMutation]); 
+                history.push('/login');
+            } 
+            setLoadingAuth(false);
+        }
+    }, [dataMutation, setToken,loadingAuth,history]);
 
-    useEffect(()=>{
-        console.log("Token Actual",authToken)
-    },[authToken]);  
 
-    if(loadingMutation) return <div>Loading ...</div>
-    if(!authToken){
-        history.push('/login')
-        //return <div>Error</div>
+    if(loadingAuth || loadingMutation) {
+        return <div>Loading ...</div>
+    }
+    
+    if(!authToken && loadingAuth){
+        history.push('/login');
+        window.location.reload();
     }
 
     return (
         <div className="mainContainer">
-                    <Header />
+            <Header />
             <main>{children}</main>
         </div>
     );

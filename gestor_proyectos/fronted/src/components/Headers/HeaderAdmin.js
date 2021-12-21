@@ -3,11 +3,15 @@ import {BsFillPersonFill} from "react-icons/bs"
 import {  Nav,  Navbar,  NavbarBrand,  NavbarText,  NavItem,  NavLink } from "reactstrap";
 import {Link} from 'react-router-dom'
 import {useAuth} from '../authContext'
+import { useHistory } from 'react-router-dom'
+
 const Header = () => {
-  const {setToken} = useAuth();
-  const EliminarToken=()=>{
-    setToken(null);
-  }
+  const history = useHistory();
+  const {setAuthToken} = useAuth();
+  const eliminarToken = () => {
+    localStorage.clear();
+    history.push('/login');
+  };
   return (
     <div>
       <Navbar color="primary"  expand="md">
@@ -37,7 +41,7 @@ const Header = () => {
         </NavbarText>
         <NavbarText>
             <div>
-              <button type="button" className="btn btn-success" onClick={()=>EliminarToken()}>Cerrar Sesión</button>   
+              <button type="button" className="btn btn-success" onClick={()=>eliminarToken()}>Cerrar Sesión</button>   
             </div>
           </NavbarText>
       </Navbar>

@@ -53,9 +53,14 @@ function App() {
     const[authToken,setAuthToken]=useState('');
 
     const setToken=(token)=>{
+        
         setAuthToken(token);
+        console.log('authToken',authToken);
         if(token){
-            localStorage.setItem('token',JSON.stringify(token));
+            localStorage.setItem('token',JSON.stringify(token));     
+        }else{
+            localStorage.removeItem('token');
+            console.log('token app',token);
         }
     };
 
@@ -65,7 +70,7 @@ function App() {
             <div className="App">
                 <Router>
                     <Switch>
-                        <Route path={['/admin/actualizar/:idUsuario', '/admin/proyectos', '/admin/proyectos/:idProyecto', '/admin/registros', '/admin/actualizar', '/admin/roles']}>
+                        <Route exact path={['/admin/actualizar/:idUsuario', '/admin/proyectos', '/admin/proyectos/:idProyecto', '/admin/registros', '/admin/actualizar', '/admin/roles']}>
                             <LayoutAdmin>
                                 <Switch>
                                     <Route exact path="/admin/registros">

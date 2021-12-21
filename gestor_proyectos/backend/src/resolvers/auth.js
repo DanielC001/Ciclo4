@@ -24,13 +24,7 @@ const AuthResolvers = {
             }else{
                 return{
                     token:CrearToken.generarToken({
-                        _id:context._id,
-                        nombre:context.nombre,
-                        apellido:context.apellido,
-                        correo:context._correo,
-                        identificacion:context.identificacion,
-                        correo:context.correo,
-                        rol:context.rol
+                       context
                     }),
                     //console.log("si lo tenemos")
             };
