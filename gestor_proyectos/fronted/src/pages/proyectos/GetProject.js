@@ -5,11 +5,11 @@ import { get } from "jquery";
 import { Table } from "reactstrap";
 import Tarjetas from "../../components/Tarjetas"
 
-const client = new ApolloClient({
+/*const client = new ApolloClient({
     uri: 'http://localhost:5010/graphql',
 
     cache: new InMemoryCache()
-  }); 
+  }); */
 
   const GET_PROJECT = gql`
   {
@@ -55,11 +55,10 @@ const client = new ApolloClient({
 
   const GetProject = ({link}) => {
     return (
-      <ApolloProvider client={client}>
+
           <div className='contenido'>
           <GET_PROJECTS enlace={link}></GET_PROJECTS>
           </div>
-      </ApolloProvider>
     );
   }
 

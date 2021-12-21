@@ -16,7 +16,26 @@ const AuthResolvers = {
             return {
                 token:CrearToken.generarToken(Verificarcorreo)
             }
-        }
-    }
+        },
+        validarToken: async (parent,args,context) => {
+            console.log(context);
+            if(!context.userData){
+                return "error"
+            }else{
+                return{
+                    token:CrearToken.generarToken({
+                        _id:context._id,
+                        nombre:context.nombre,
+                        apellido:context.apellido,
+                        correo:context._correo,
+                        identificacion:context.identificacion,
+                        correo:context.correo,
+                        rol:context.rol
+                    }),
+                    //console.log("si lo tenemos")
+            };
+            }
+        },
+    },
 }
 module.exports = {AuthResolvers}

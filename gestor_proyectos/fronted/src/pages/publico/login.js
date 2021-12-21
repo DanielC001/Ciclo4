@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider, useMutation, gql } from "@apollo/client";
 import { useState } from "react";
 import { BrowserRouter } from 'react-router-dom';
-
-const client = new ApolloClient({
-    uri: 'http://localhost:5010/graphql',
-    cache: new InMemoryCache()
-});
+import { browserHistory } from 'react-router';
+import {useAuth} from '../../components/authContext';
+import {useHistory} from 'react-router-dom'
 
 const AUTH = gql`
 mutation Mutation($correo: String!, $contrasena: String!) {
@@ -18,6 +16,8 @@ mutation Mutation($correo: String!, $contrasena: String!) {
 `;
  
 const Login = () => {
+    const history=useHistory();
+    const {setToken}=useAuth();
     const [autenticar] = useMutation(AUTH);
     const [correo, setCorreo] = useState("");
     const [contrasena,setContrasena] = useState("");
@@ -33,18 +33,18 @@ const Login = () => {
             }
         }).then(({ data }) => {
             //console.log(data)
-            localStorage.setItem('token',data.autenticar.token);
+            setToken(data.autenticar.token);
+            //localStorage.setItem('token',data.autenticar.token);
             setSuccess(`User ${data} creado con éxito`);
             setCorreo("");
             setContrasena("");
+            history.push('/admin/proyectos')
         }).catch((error) => {
             setError(error.message.replace("GraphQL error: ", ""));
         });
     }
 
     return (
-
-        <ApolloProvider client={client}>
             <div className="registro">
                 <form class="row g-3" onSubmit={handleSubmit}>
                     <div class="col-md-6">
@@ -59,19 +59,17 @@ const Login = () => {
                         <button type="submit" class="btn btn-primary">Crear</button>
                     </div>
                 </form>
+                {error && <p className="text-danger">{error}</p>}
+                {success && <p className="text-success">{success}</p>}
             </div>
-            {error && <p className="text-danger">{error}</p>}
-            {success && <p className="text-success">{success}</p>}
-        </ApolloProvider>
+            
     );
 }
 
 function Autenticar() {
     return (
         <div>
-            <ApolloProvider client={client}>
                 <Login />
-            </ApolloProvider>
         </div>
     )
 }

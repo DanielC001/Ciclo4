@@ -2,7 +2,12 @@ import React from "react";
 import {BsFillPersonFill} from "react-icons/bs"
 import {  Nav,  Navbar,  NavbarBrand,  NavbarText,  NavItem,  NavLink } from "reactstrap";
 import {Link} from 'react-router-dom'
+import {useAuth} from '../authContext'
 const Header = () => {
+  const {setToken} = useAuth();
+  const EliminarToken=()=>{
+    setToken(null);
+  }
   return (
     <div>
       <Navbar color="primary"  expand="md">
@@ -32,7 +37,7 @@ const Header = () => {
         </NavbarText>
         <NavbarText>
             <div>
-              <button type="button" className="btn btn-success">Cerrar Sesión</button>   
+              <button type="button" className="btn btn-success" onClick={()=>EliminarToken()}>Cerrar Sesión</button>   
             </div>
           </NavbarText>
       </Navbar>

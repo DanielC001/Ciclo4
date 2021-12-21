@@ -6,6 +6,7 @@ const authType = gql`
     }
     type Mutation{
         autenticar(correo:String!,contrasena:String!):Token
+        validarToken:Token
     }
 
 `;
