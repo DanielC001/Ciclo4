@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ApolloClient, InMemoryCache, ApolloProvider, useMutation, gql,createHttpLink} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, useMutation, gql, createHttpLink } from "@apollo/client";
 import { AuthContext } from './components/authContext';
 import { setContext } from "@apollo/client/link/context";
 //Layouts
@@ -31,15 +31,15 @@ import PaginaLider from './pages/lider/inicio'
 import { useState } from 'react';
 
 const httpLink = createHttpLink({
-    uri:'http://localhost:5010/graphql'
+    uri: 'http://localhost:5010/graphql'
 });
 
-const authLink = setContext((_,{headers})=>{
+const authLink = setContext((_, { headers }) => {
     const token = JSON.parse(localStorage.getItem('token'));
-    return{
-        headers:{
+    return {
+        headers: {
             ...headers,
-            authorization:token ? `Bearer ${token}` : '',
+            authorization: token ? `Bearer ${token}` : '',
         },
     };
 });
@@ -50,76 +50,76 @@ const client = new ApolloClient({
 });
 
 function App() {
-    const[authToken,setAuthToken]=useState('');
+    const [authToken, setAuthToken] = useState('');
 
-    const setToken=(token)=>{
-        
+    const setToken = (token) => {
+
         setAuthToken(token);
-        console.log('authToken',authToken);
-        if(token){
-            localStorage.setItem('token',JSON.stringify(token));     
-        }else{
+        console.log('authToken', authToken);
+        if (token) {
+            localStorage.setItem('token', JSON.stringify(token));
+        } else {
             localStorage.removeItem('token');
-            console.log('token app',token);
+            console.log('token app', token);
         }
     };
 
     return (
         <ApolloProvider client={client}>
-            <AuthContext.Provider value={{authToken,setAuthToken,setToken}}>
-            <div className="App">
-                <Router>
-                    <Switch>
-                        <Route exact path={['/admin/actualizar/:idUsuario', '/admin/proyectos', '/admin/proyectos/:idProyecto', '/admin/registros', '/admin/actualizar', '/admin/roles']}>
-                            <LayoutAdmin>
-                                <Switch>
-                                    <Route exact path="/admin/registros">
-                                        <ProyectoRegistros></ProyectoRegistros>
-                                    </Route>
-                                    <Route exact path="/admin/actualizar/:idUsuario" component={Actualizar}>
-                                    </Route>
-                                    <Route exact path="/admin/actualizar">
-                                        <ActualizarUsuarios />
-                                    </Route>
-                                    <Route exact path="/admin/proyectos/:idProyecto" component={ProyectoId}>
-                                    </Route>
-                                    <Route exact path="/admin/proyectos">
-                                        <ProyectoAdmin></ProyectoAdmin>
-                                    </Route>
-                                    <Route exact path="/admin/roles">
-                                        <Roles />
-                                    </Route>
-                                </Switch>
-                            </LayoutAdmin>
-                        </Route>
-                        <Route path={['/lider/proyectos']}>
-                            <LayoutLider>
-                                <Switch>
-                                    <Route path="/lider/proyectos">
-                                        <PaginaLider />
-                                    </Route>
-                                </Switch>
-                            </LayoutLider>
-                        </Route>
-                        <Route path={['/estudiante/proyectos']}>
-                            <LayoutEstudiante>
-                                <Switch>
-                                    <Route path="/estudiante/proyectos">
-                                        <Inicio />
-                                    </Route>
-                                </Switch>
-                            </LayoutEstudiante>
-                        </Route>
-                        <Route path={['/login', 'registro', '/']}>
+            <AuthContext.Provider value={{ authToken, setAuthToken, setToken }}>
+                <div className="App">
+                    <Router>
+                        <Switch>
+                            <Route exact path={['/admin/actualizar/:idUsuario', '/admin/proyectos', '/admin/proyectos/:idProyecto', '/admin/registros', '/admin/actualizar', '/admin/roles']}>
+                                <LayoutAdmin>
+                                    <Switch>
+                                        <Route exact path="/admin/registros">
+                                            <ProyectoRegistros></ProyectoRegistros>
+                                        </Route>
+                                        <Route exact path="/admin/actualizar/:idUsuario" component={Actualizar}>
+                                        </Route>
+                                        <Route exact path="/admin/actualizar">
+                                            <ActualizarUsuarios />
+                                        </Route>
+                                        <Route exact path="/admin/proyectos/:idProyecto" component={ProyectoId}>
+                                        </Route>
+                                        <Route exact path="/admin/proyectos">
+                                            <ProyectoAdmin></ProyectoAdmin>
+                                        </Route>
+                                        <Route exact path="/admin/roles">
+                                            <Roles />
+                                        </Route>
+                                    </Switch>
+                                </LayoutAdmin>
+                            </Route>
+                            <Route exact path={['/lider/proyectos']}>
+                                <LayoutLider>
+                                    <Switch>
+                                        <Route exact path="/lider/proyectos">
+                                            <PaginaLider />
+                                        </Route>
+                                    </Switch>
+                                </LayoutLider>
+                            </Route>
+                            <Route exact path={['/estudiante/proyectos']}>
+                                <LayoutEstudiante>
+                                    <Switch>
+                                        <Route exact path="/estudiante/proyectos">
+                                            <Inicio />
+                                        </Route>
+                                    </Switch>
+                                </LayoutEstudiante>
+                            </Route>
+                        <Route exact path={['/login', 'registro', '/']}>
                             <LayoutPublico>
                                 <Switch>
-                                    <Route path="/login">
+                                    <Route exact path="/login">
                                         <Login />
                                     </Route>
-                                    <Route path="/registro">
+                                    <Route  exact path="/registro">
                                         <Registro />
                                     </Route>
-                                    <Route path='/'>
+                                    <Route exact path='/'>
                                         <Home />
                                     </Route>
                                 </Switch>

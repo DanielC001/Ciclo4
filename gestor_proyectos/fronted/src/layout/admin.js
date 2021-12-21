@@ -5,8 +5,7 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '../components/authContext'
 import { useMutation, gql } from '@apollo/client'
 import { useHistory } from 'react-router-dom'
-import { Col, Row } from "reactstrap";
-//import SideNavigation from "../components/SideNavigation";
+
 
 const Layout = ({ children }) => {
     const styles = {
