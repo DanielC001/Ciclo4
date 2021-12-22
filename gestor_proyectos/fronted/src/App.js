@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, useMutation, gql, createHttpLink } from "@apollo/client";
 import { AuthContext } from './components/authContext';
 import { setContext } from "@apollo/client/link/context";
+
 //Layouts
 import LayoutPublico from "./layout/publicLayout";
 import LayoutAdmin from "./layout/admin";
@@ -64,6 +65,8 @@ function App() {
         }
     };
 
+        
+
     return (
         <ApolloProvider client={client}>
             <AuthContext.Provider value={{ authToken, setAuthToken, setToken }}>
@@ -110,7 +113,7 @@ function App() {
                                     </Switch>
                                 </LayoutEstudiante>
                             </Route>
-                        <Route exact path={['/login', 'registro', '/']}>
+                        <Route exact path={['/login', '/registro', '/']}>
                             <LayoutPublico>
                                 <Switch>
                                     <Route exact path="/login">
