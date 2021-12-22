@@ -1,7 +1,11 @@
 const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv');
+dotenv.config();
+
+const {BD_TOKEN} = process.env;
 
 const generarToken = (payload)=>{
-    return jwt.sign({payload},'secret',{ expiresIn:'24h'
+    return jwt.sign({payload},BD_TOKEN,{ expiresIn:'24h'
     });
 };
 
